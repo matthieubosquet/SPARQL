@@ -1,0 +1,23 @@
+# Count ontologies, classes, properties and restrictions in the graph.
+
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?ontology ?type ?thing (COUNT(?instance) as ?count)
+WHERE
+{
+    VALUES ?type { owl:Ontology owl:Class rdf:Property owl:Restriction }
+
+    ?thing a ?type .
+
+    OPTIONAL { ?thing rdfs:isDefinedBy ?ontology . }
+
+    OPTIONAL { ?classInstance a ?thing . }
+
+    OPTIONAL { ?propertyInstance ?thing ?o . }
+
+    BIND(IF(EXISTS { ?thing a rdf:Property . }, ?propertyInstance, IF(EXISTS { ?thing a owl:Ontology . }, ?thing, ?classInstance)) as ?instance)
+}
+GROUP BY ?ontology ?type ?thing
+ORDER BY ?ontology ?type DESC(?count)

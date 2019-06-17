@@ -1,0 +1,16 @@
+# Count instances of each instance of owl:Class defined by an ontology.
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?ontology ?class (COUNT(?classInstance) AS ?count)
+WHERE
+{
+    ?class
+        a owl:Class ;
+        rdfs:isDefinedBy ?ontology .
+
+    ?classInstance a ?class .
+}
+GROUP BY ?ontology ?class
+ORDER BY DESC(?count)
