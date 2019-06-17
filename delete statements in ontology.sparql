@@ -1,4 +1,4 @@
-﻿# Count all triples where the subject is an instance of a class defined by an ontology.
+﻿# Delete all triples where the subject is an instance of a class defined by an ontology.
 # Parameters:
 #     - Ontology:
 #         - name: ?ontology
@@ -9,7 +9,10 @@
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
 
-SELECT (COUNT(?s) as ?count)
+DELETE
+{
+    ?s ?p ?o .
+}
 WHERE
 {
     VALUES ?ontology { <http://www.w3.org/2004/02/skos/core> }

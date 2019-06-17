@@ -1,0 +1,7 @@
+﻿# Count all statements.
+
+SELECT (COUNT(?s) as ?count)
+WHERE
+{
+    ?s ?p ?o .
+}

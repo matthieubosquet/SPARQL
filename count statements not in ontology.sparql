@@ -1,11 +1,17 @@
+﻿# Count all triples where the subject is not an instance of a class defined by an ontology.
+# Parameters:
+#     - Ontology:
+#         - name: ?ontology
+#         - range: rdfs:Resource
+#         - cardinality: 1-∞
+#         - example: The SKOS core ontology <http://www.w3.org/2004/02/skos/core>
+
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
 
 SELECT (COUNT(?s) as ?count)
 WHERE
 {
-    # For example all triples where the subject is not an instance of a class defined by SKOS core
     VALUES ?ontology { <http://www.w3.org/2004/02/skos/core> }
 
     ?s ?p ?o .
@@ -15,6 +21,7 @@ WHERE
         ?class
             rdfs:isDefinedBy ?ontology ;
             a owl:Class .
+
         ?s a ?class .
     }
 }
