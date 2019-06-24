@@ -4,7 +4,7 @@ A collection of fairly generic SPARQL queries.
 
 ## PowerShell script usage
 
-This PowerShell script is created to work with the [RDF4J API](https://rdf4j.eclipse.org/documentation/rest-api/).
+The **InvokeSparqlQuery.ps1** PowerShell script is created to work with the [RDF4J API](https://rdf4j.eclipse.org/documentation/rest-api/).
 
 The *SubscriptionKey* and *ApiVersion* parameters are aimed at [Azure API Management](https://azure.microsoft.com/services/api-management/).
 
