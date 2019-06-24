@@ -13,6 +13,6 @@ The *SubscriptionKey* and *ApiVersion* parameters are aimed at [Azure API Manage
 Retrieve 10 statements from a local repository named "test":
 
 ```powershell
-.\InvokeSparqlQuery.ps1 -Query "select 10 statements.sparql" -SparqlEnd
+.\Invoke-SparqlQuery.ps1 -Query "select 10 statements.sparql" -SparqlEnd
 pointBaseUrl "http://localhost:7200/repositories/test"
 ```
