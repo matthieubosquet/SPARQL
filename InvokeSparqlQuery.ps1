@@ -1,7 +1,7 @@
 Param(
     [Parameter(Mandatory=$false)] [string] $Repository = "",
     [Parameter(Mandatory=$false)] [string] $SubscriptionKey,
-    [Parameter(Mandatory=$false)] [string] $APIVersion,
+    [Parameter(Mandatory=$false)] [string] $ApiVersion,
     [Parameter(Mandatory=$false)] [bool] $Infer = $true,
     [Parameter(Mandatory=$true)] [string] $SparqlEndpointBaseUrl,
     [Parameter(Mandatory=$true)] [string] $Query
@@ -43,8 +43,8 @@ if ($Infer -ne $true)
 }
 
 # API version (environment)
-if ($APIVersion -ne "") {
-    $Headers.Add('Api-Version', $APIVersion)
+if ($ApiVersion -ne "") {
+    $Headers.Add('Api-Version', $ApiVersion)
 }
 
 # Subscription key (if protected)
@@ -56,8 +56,8 @@ if ($SubscriptionKey -ne "") {
 Write-Host ("{0} - Uri: {1}" -f (Get-Date -Format "HH:mm:ss.fff"), $Uri)
 Write-Host ("{0} - Content-type: {1}" -f (Get-Date -Format "HH:mm:ss.fff"), $Headers["Content-Type"])
 Write-Host ("{0} - Query string: {1}" -f (Get-Date -Format "HH:mm:ss.fff"), $Query)
-if ($APIVersion -ne "") {
-    Write-Host ("{0} - API Version: {1}" -f (Get-Date -Format "HH:mm:ss.fff"), $APIVersion)
+if ($ApiVersion -ne "") {
+    Write-Host ("{0} - API Version: {1}" -f (Get-Date -Format "HH:mm:ss.fff"), $ApiVersion)
 }
 
 Invoke-RestMethod -Method Post -Uri $SparqlEndpointBaseUrl -Headers $Headers -Body $Query -Verbose
