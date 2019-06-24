@@ -1,0 +1,6 @@
+PREFIX ex: <https://example.com/>
+
+DELETE DATA
+{
+    ex:testSubject ex:testPredicate ex:testObject .
+}

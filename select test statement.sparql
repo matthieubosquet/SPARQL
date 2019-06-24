@@ -1,0 +1,8 @@
+PREFIX ex: <https://example.com/>
+
+SELECT *
+WHERE
+{
+    BIND (ex:testSubject AS ?s)
+    ?s ?p ?o .
+}
