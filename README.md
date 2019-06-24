@@ -8,7 +8,9 @@ The **InvokeSparqlQuery.ps1** PowerShell script is created to work with the [RDF
 
 The *SubscriptionKey* and *ApiVersion* parameters are aimed at [Azure API Management](https://azure.microsoft.com/services/api-management/).
 
-Simple example, in a local repository named "test", retrieve 10 statements:
+### Examples
+
+Retrieve 10 statements from a local repository named "test":
 
 ```powershell
 .\InvokeSparqlQuery.ps1 -Query "select 10 statements.sparql" -SparqlEnd
