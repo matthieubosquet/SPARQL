@@ -1,0 +1,5 @@
+PREFIX : <http://www.ontotext.com/connectors/lucene#>
+
+SELECT ?cntUri ?cntStr {
+  ?cntUri :listConnectors ?cntStr .
+}

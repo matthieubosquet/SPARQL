@@ -1,0 +1,10 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?owlClassName
+WHERE
+{
+    BIND("https://id.parliament.uk/schema/" as ?namespace)
+
+    ?owlClass a owl:Class .
+    BIND(SUBSTR(STR(?owlClass), STRLEN(?namespace) + 1) as ?owlClassName)
+}

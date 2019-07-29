@@ -1,0 +1,26 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+CONSTRUCT
+{
+    ?s ?p ?o .
+}
+WHERE
+{
+    {
+        SELECT ?s
+        WHERE
+        {
+            BIND(<http://www.w3.org/2004/02/skos/core> as ?s)
+        }
+    }
+    UNION
+    {
+        SELECT ?s
+        WHERE
+        {
+            BIND(<http://www.w3.org/2004/02/skos/core> as ?o)
+            ?s rdfs:isDefinedBy ?o .
+        }
+    }
+    ?s ?p ?o .
+}

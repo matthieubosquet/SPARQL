@@ -1,0 +1,16 @@
+PREFIX : <http://www.ontotext.com/connectors/lucene#>
+PREFIX inst: <http://www.ontotext.com/connectors/lucene/instance#>
+
+SELECT ?facetName ?facetValue ?facetCount
+WHERE
+{
+  ?search
+    a inst:ukparliament ;
+    :facetFields "treaty" ;
+    :facets _:f .
+
+  _:f
+    :facetName ?facetName ;
+    :facetValue ?facetValue ;
+    :facetCount ?facetCount .
+}

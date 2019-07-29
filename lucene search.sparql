@@ -1,0 +1,21 @@
+PREFIX luc: <http://www.ontotext.com/connectors/lucene#>
+PREFIX inst: <http://www.ontotext.com/connectors/lucene/instance#>
+
+SELECT ?workPackagedThing
+{
+    VALUES ?query { "treaty:USA"  }
+
+    ?search
+        a inst:ukparliament ;
+        luc:query ?query ;
+        luc:entities ?workPackagedThing ;
+        luc:totalHits ?totalHits .
+
+    ?workPackagedThing
+        luc:snippets _:s ;
+        luc:score ?score .
+
+    _:s
+        luc:snippetField ?snippetField ;
+        luc:snippetText ?snippetText .
+}
