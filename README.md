@@ -20,7 +20,7 @@ A collection of fairly generic SPARQL queries.
 
 PowerShell script to run SPARQL queries.
 
-Intended to work with the [RDF4J API](https://rdf4j.eclipse.org/documentation/rest-api/) and [Azure API Management](https://azure.microsoft.com/services/api-management/).
+Intended to work with the [RDF4J API](https://rdf4j.org/documentation/reference/rest-api/) and [Azure API Management](https://azure.microsoft.com/services/api-management/).
 
 ### Parameters
 
