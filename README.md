@@ -2,6 +2,20 @@
 
 A collection of fairly generic SPARQL queries.
 
+## SPARQL 1.1 Technical Recommendation (21 March 2013)
+
+- [Overview](https://www.w3.org/TR/sparql11-overview/)
+- [Query Language](https://www.w3.org/TR/sparql11-query/)
+- [Update](https://www.w3.org/TR/sparql11-update/)
+- [Service Description](https://www.w3.org/TR/sparql11-service-description/)
+- [Federated Query](https://www.w3.org/TR/sparql11-federated-query/)
+- [Query Results JSON Format](https://www.w3.org/TR/sparql11-results-json/)
+- [Query Results CSV and TSV Formats](https://www.w3.org/TR/sparql11-results-csv-tsv/)
+- [Query Results XML Format](https://www.w3.org/TR/rdf-sparql-XMLres/)
+- [Entailment Regimes](https://www.w3.org/TR/sparql11-entailment/)
+- [Protocol](https://www.w3.org/TR/sparql11-protocol/)
+- [Graph Store HTTP Protocol](https://www.w3.org/TR/sparql11-http-rdf-update/)
+
 ## Invoke-SparqlQuery
 
 PowerShell script to run SPARQL queries.
